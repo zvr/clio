@@ -1,0 +1,30 @@
+<!-- <ul>
+  <div *ngFor="let software of softwaresObservable | async">
+      <ngb-alert type="info" [dismissible]="false">
+          <h3>{{software.name}}</h3>
+          <p>{{software.license}}</p>
+          <p>{{software.version}}</p>
+          <div>
+              <a href="{{software.url}}" target="_blank" class="btn btn-danger">Software URL</a>
+          </div>
+      </ngb-alert> 
+  </div>
+</ul> -->
+
+<ul>
+  <div class="clearfix"></div>
+  <div *ngFor="let software of softwaresObservable | async" class="card text-center">
+    <div class="card-header">
+        <h4>{{software.name}}</h4>
+    </div>
+    <div class="card-body">
+      <p class="card-text">License: {{software.license}}</p>
+      <p class="card-text">Version: {{software.version}}</p>
+      <a target="_blank" href="{{software.origin}}" class="btn btn-primary">Software Documentation</a>
+    </div>
+    <div class="card-footer text-muted">
+      Updated: 2 days ago
+    </div>
+  </div>
+
+</ul>
